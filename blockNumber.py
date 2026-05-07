@@ -25,8 +25,8 @@ class SMSHandler(BaseHTTPRequestHandler):
 
         resp = MessagingResponse()
 
-        if from_number not in BLOCKED_NUMBERS:
-            resp.message("Thanks for your message!")
+        if from_number in BLOCKED_NUMBERS:
+            resp.message("You are blocked")
 
         response_xml = str(resp)
 
